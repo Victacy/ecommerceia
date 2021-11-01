@@ -2,12 +2,17 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import StackRoute from "./src/routes/stack.route";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+// import StackRoute from "./src/routes/stack.route";
+import DrawerRoute from "./src/routes/drawer.route";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <StackRoute />
+      <SafeAreaProvider>
+        {/* <StackRoute /> */}
+        <DrawerRoute />
+      </SafeAreaProvider>
     </NavigationContainer>
   );
 }

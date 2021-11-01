@@ -30,3 +30,5 @@ export default function StackRoute() {
     </Stack.Navigator>
   );
 }
+
+// <Stack.Screen name='Drawer' children={({navigation}) => <Drawer navigation={navigation} />}
