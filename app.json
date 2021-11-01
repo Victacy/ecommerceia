@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "shoprn",
+    "slug": "shoprn",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "shoprn"
+}
