@@ -17,14 +17,24 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
 
   return (
-    <View>
-      <Text>Create an account</Text>
+    <View style={styles.container}>
+      <Text
+        style={{
+          marginTop: 180,
+          padding: 5,
+          fontSize: 18,
+          fontWeight: "bold",
+        }}
+      >
+        Create an account
+      </Text>
+      <Text>Full name </Text>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
           placeholder="e.g John Doe"
-          placeholderTextColor="#ffffff"
-          onChangeText={(name) => setEmail(setName)}
+          placeholderTextColor="black"
+          onChangeText={(name) => setEmail(name)}
         />
       </View>
 
@@ -32,7 +42,7 @@ export default function SignUp() {
         <TextInput
           style={styles.TextInput}
           placeholder="example@email.com"
-          placeholderTextColor="#ffffff"
+          placeholderTextColor="black"
           onChangeText={(email) => setEmail(email)}
         />
       </View>
@@ -40,7 +50,7 @@ export default function SignUp() {
         <TextInput
           style={styles.TextInput}
           placeholder="dd/mm/yyyy"
-          placeholderTextColor="#ffffff"
+          placeholderTextColor="black"
           onChangeText={(birth) => setBirth(birth)}
         />
       </View>
@@ -48,7 +58,7 @@ export default function SignUp() {
         <TextInput
           style={styles.TextInput}
           placeholder="e.g Tema"
-          placeholderTextColor="#ffffff"
+          placeholderTextColor="black"
           onChangeText={(pob) => setPob(pob)}
         />
       </View>
@@ -56,7 +66,7 @@ export default function SignUp() {
         <TextInput
           style={styles.TextInput}
           placeholder="+233(0) *********"
-          placeholderTextColor="#ffffff"
+          placeholderTextColor="black"
           onChangeText={(number) => setNumber(number)}
         />
       </View>
@@ -65,7 +75,7 @@ export default function SignUp() {
           autocomplete
           style={styles.TextInput}
           placeholder="Male/Female"
-          placeholderTextColor="#ffffff"
+          placeholderTextColor="black"
           onChangeText={(gender) => setGender(gender)}
         />
       </View>
@@ -74,33 +84,30 @@ export default function SignUp() {
         <TextInput
           style={styles.TextInput}
           placeholder="Password."
-          placeholderTextColor="#ffffff"
+          placeholderTextColor="black"
           secureTextEntry={true}
           onChangeText={(password) => setPassword(password)}
         />
       </View>
-      <View>
+      <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
           placeholder="Repeat Password."
-          placeholderTextColor="#ffffff"
+          placeholderTextColor="black"
           secureTextEntry={true}
           onChangeText={(password) => setPassword(password)}
         />
       </View>
-      <TouchableOpacity>
-        <Text style={styles.forgot_button}>Forgot Password?</Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>Register</Text>
+      <TouchableOpacity style={styles.signupBtn}>
+        <Text style={styles.signupText}>Register</Text>
       </TouchableOpacity>
 
       <TouchableOpacity>
         <Text style={styles.forgot_button}>
           Already have an account?
           <Text
-            style={{ color: "blue" }}
+            style={{ color: "blue", fontWeight: "600" }}
             onPress={() => navigation.navigate("Login")}
           >
             Login here
@@ -114,9 +121,11 @@ export default function SignUp() {
 const styles = StyleSheet.create({
   inputView: {
     // backgroundColor: "#FFC0CB",
-    backgroundColor: "#9d9b9d",
+    backgroundColor: "#ededed",
+    borderColor: "#929292",
+    borderWidth: 3,
     borderRadius: 5,
-    width: "70%",
+    width: "60%",
     height: 45,
     marginBottom: 20,
     alignItems: "center",
@@ -125,16 +134,20 @@ const styles = StyleSheet.create({
   TextInput: {
     height: 50,
     // color:'white',
+    fontSize: 15,
     flex: 1,
     padding: 10,
     marginLeft: 20,
   },
-  loginText: {
+  signupText: {
     color: "white",
+    fontSize: 20,
+    fontWeight: "600",
   },
   forgot_button: {
     height: 30,
     marginBottom: 30,
+    paddingLeft: 15,
   },
   container: {
     flex: 1,
@@ -142,8 +155,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  loginBtn: {
-    width: "80%",
+  signupBtn: {
+    width: "60%",
     borderRadius: 5,
     height: 50,
     alignItems: "center",
