@@ -21,6 +21,7 @@ export default function DrawerRoute() {
       <Drawer.Screen name="Product Details" component={ProDetails} />
       <Drawer.Screen name="Product Store" component={ProStore} />
       <Drawer.Screen name="Signup" component={SignUp} />
+      {/* <Drawer.Screen name="Account" component={AccountRoute} /> */}
     </Drawer.Navigator>
   );
 }

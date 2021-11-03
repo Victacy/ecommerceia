@@ -31,10 +31,26 @@ export default function Home({ navigation }) {
             title="Buy now"
             onPress={() => navigation.navigate("Login")}
           />
+        </Card>
+
+        <Card
+          image={{
+            uri: "https://i-verve.com/blog/wp-content/uploads/2019/06/timberland-shoes.jpg",
+          }}
+        >
+          <Text style={{ marginBottom: 10, marginTop: 20 }} h2>
+            Timberland shoes
+          </Text>
+          <Text style={styles.price} h4>
+            $ 450
+          </Text>
+          <Text h6 style={styles.description}>
+            added 1d ago
+          </Text>
           <Button
-            onPress={() => navigation.navigate("Signup")}
-            title="Login into your account"
-            type="solid"
+            type="clear"
+            title="Buy now"
+            onPress={() => navigation.navigate("Login")}
           />
         </Card>
 
@@ -57,10 +73,6 @@ export default function Home({ navigation }) {
             title="Buy now"
             onPress={() => navigation.navigate("Login")}
           />
-          <Button
-            onPress={() => navigation.navigate("Signup")}
-            title="Login into your account"
-          />
         </Card>
 
         <Card
@@ -81,35 +93,6 @@ export default function Home({ navigation }) {
             type="clear"
             title="Buy now"
             onPress={() => navigation.navigate("Login")}
-          />
-          <Button
-            onPress={() => navigation.navigate("Signup")}
-            title="Login into your account"
-          />
-        </Card>
-
-        <Card
-          image={{
-            uri: "https://i-verve.com/blog/wp-content/uploads/2019/06/timberland-shoes.jpg",
-          }}
-        >
-          <Text style={{ marginBottom: 10, marginTop: 20 }} h2>
-            Timberland shoes
-          </Text>
-          <Text style={styles.price} h4>
-            $ 450
-          </Text>
-          <Text h6 style={styles.description}>
-            added 1d ago
-          </Text>
-          <Button
-            type="clear"
-            title="Buy now"
-            onPress={() => navigation.navigate("Login")}
-          />
-          <Button
-            onPress={() => navigation.navigate("Signup")}
-            title="Login into your account"
           />
         </Card>
       </ScrollView>

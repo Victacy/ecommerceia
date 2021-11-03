@@ -28,20 +28,19 @@ export default function SignUp() {
       >
         Create an account
       </Text>
-      <Text>Full name </Text>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="e.g John Doe"
+          placeholder="Full name"
           placeholderTextColor="black"
-          onChangeText={(name) => setEmail(name)}
+          onChangeText={(name) => setName(name)}
         />
       </View>
 
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="example@email.com"
+          placeholder="Email Address"
           placeholderTextColor="black"
           onChangeText={(email) => setEmail(email)}
         />
@@ -57,7 +56,7 @@ export default function SignUp() {
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="e.g Tema"
+          placeholder="Place of Birth"
           placeholderTextColor="black"
           onChangeText={(pob) => setPob(pob)}
         />
@@ -65,7 +64,7 @@ export default function SignUp() {
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
-          placeholder="+233(0) *********"
+          placeholder="Phone Number"
           placeholderTextColor="black"
           onChangeText={(number) => setNumber(number)}
         />
@@ -74,7 +73,7 @@ export default function SignUp() {
         <TextInput
           autocomplete
           style={styles.TextInput}
-          placeholder="Male/Female"
+          placeholder="Gender"
           placeholderTextColor="black"
           onChangeText={(gender) => setGender(gender)}
         />
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 40,
+    marginTop: 20,
     color: "white",
     //    backgroundColor:"#FF1493",
     backgroundColor: "#280c86",
