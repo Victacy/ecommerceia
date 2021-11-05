@@ -1,0 +1,18 @@
+ const [store, setStore] = useState();
+ 
+ 
+  // async function getStoreData() {
+  //   fetch("https://fakestoreapi.com/products")
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       setStore(response);
+  //       console.log(response);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  // }
+
+  // useEffect(() => {
+  //   getStoreData();
+  // }, []);
