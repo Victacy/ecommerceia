@@ -1,107 +1,156 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
-import { Card } from "react-native-elements";
+import { MaterialIcons, Octicons } from "@expo/vector-icons";
+import React from "react";
+import {
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+} from "react-native";
+import items from "./items";
 
-export default function Cart() {
-  const [shop, setShop] = useState([]);
-
-  const shopCart = async () => {
-    const response = await fetch("https://fakestoreapi.com/carts");
-    console.log(response);
-    const Info = await response.json();
-    // console.log(Info);
-    setShop(Info);
+export default function Cart({ navigation }) {
+  const ShopCart = ({ item }) => {
+    return (
+      <View style={styles.shop}>
+        <Image source={item.image} style={{ height: 80, width: 80 }} />
+        <View
+          style={{
+            height: 100,
+            marginLeft: 10,
+            paddingVertical: 20,
+            flex: 1,
+          }}
+        >
+          <Text style={{ fontWeight: "bold", fontSize: 16 }}>{item.name}</Text>
+          <Text style={{ fontSize: 13, color: "#908e8c" }}>
+            {item.description}
+          </Text>
+          <Text style={{ fontSize: 17, fontWeight: "bold" }}>
+            GHC {""}
+            {item.price}
+          </Text>
+        </View>
+        <View style={{ marginRight: 20, alignItems: "center" }}>
+          <View style={styles.adel}>
+            <Octicons
+              name="diff-removed"
+              size={24}
+              color="black"
+              style={{ padding: 10 }}
+            />
+            <Text style={{ fontWeight: "bold", fontSize: 18, padding: 10 }}>
+              3
+            </Text>
+            <Octicons
+              name="diff-added"
+              size={24}
+              color="black"
+              style={{ padding: 10 }}
+            />
+          </View>
+        </View>
+      </View>
+    );
   };
-  // storeData();
-
-  useEffect(() => {
-    shopCart();
-  }, []);
-
+  const MainBtn = ({ title, onPress = () => {} }) => {
+    return (
+      <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+        <View style={styles.btnContainer}>
+          <Text style={styles.title}>{title}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  };
+  const Other = ({ title, onPress = () => {} }) => {
+    return (
+      <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+        <View style={styles.btnContainer}>
+          <Text style={styles.title}>{title}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  };
   return (
-    <View style={styles.container}>
-      {shop.map((values) => {
-        return (
-          <>
+    <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
+      <View style={styles.header}>
+        <MaterialIcons
+          name="arrow-back-ios"
+          size={24}
+          color="black"
+          onPress={navigation.goBack}
+        />
+        <Text style={{ fontSize: 20, fontWeight: "bold" }}>Shopping Cart</Text>
+      </View>
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 80 }}
+        data={items}
+        renderItem={({ item }) => <ShopCart item={item} />}
+        ListFooterComponentStyle={{ paddingHorizontal: 20, marginTop: 20 }}
+        ListFooterComponent={() => (
+          <View>
             <View
               style={{
-                flexDirection: "column",
-                marginTop: 13,
-                justifyContent: "space-evenly",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                marginVertical: 15,
               }}
             >
-              <Card>
-                <Text style={{ paddingTop: 20, marginTop: 25 }}></Text>
-                <TouchableOpacity
-                  style={{
-                    marginRight: 10,
-                    borderRadius: 20,
-                    marginRight: 10,
-                    paddingLeft: 10,
-                    // marginTop: 25,
-                    // backgroundColor: "#f0efef",
-                    height: 500,
-                    width: 450,
-                  }}
-                >
-                  <Text
-                    style={{
-                      // color: "#a5a4a3",
-                      fontWeight: "500",
-                      fontSize: 16.5,
-                      textAlign: "center",
-                    }}
-                  >
-                    {values.date}
-                  </Text>
-                  {/* <Image
-                    source={values.image}
-                    style={{ alignContent: "center", height: 280, width: 250 }}
-                  /> */}
-                  <Text
-                    style={{
-                      color: "#e36100",
-                      textAlign: "center",
-                      fontWeight: "300",
-                    }}
-                  >
-                    $ {""}
-                    <Text
-                      style={{
-                        color: "black",
-                        fontWeight: "600",
-                        fontSize: 16.5,
-                      }}
-                    >
-                      {values.products}
-                    </Text>
-                  </Text>
-                  {/* <Text style={{ padding: 15, fontSize: 18 }}>
-                    {values.category}
-                  </Text>
-                  <Text>{values.description}</Text> */}
-                </TouchableOpacity>
-              </Card>
+              <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                Total Price
+              </Text>
+              <Text style={{ fontSize: 18, fontWeight: "bold" }}>GHC 70</Text>
             </View>
-          </>
-        );
-      })}
-    </View>
+            <View style={{ marginHorizontal: 30 }}>
+              <MainBtn title="CHECKOUT" />
+            </View>
+          </View>
+        )}
+      />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: "blue",
+  header: {
+    paddingVertical: 20,
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    marginHorizontal: 20,
   },
-  box: {
-    backgroundColor: "blue",
-    width: "28%",
-    margin: 10,
-    padding: 20,
-    shadowOpacity: 2,
+  shop: {
+    height: 100,
+    elevation: 15,
+    borderRadius: 10,
+    backgroundColor: "white",
+    marginVertical: 10,
+    marginHorizontal: 20,
+    paddingHorizontal: 10,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  adel: {
+    width: 110,
+    height: 50,
+    // backgroundColor: "#d35aa2",
+    borderRadius: 10,
+    borderColor: "gray",
+    borderWidth: 3,
+    // paddingHorizontal: 5,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignContent: "center",
+  },
+  title: { color: "white", fontWeight: "bold", fontSize: 18 },
+  btnContainer: {
+    // backgroundColor: '#F9813A',
+    height: 60,
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
   },
 });

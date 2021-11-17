@@ -1,12 +1,12 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function Settings({ navigation }) {
+export default function Settings() {
   return (
     <View>
-      <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-        <Text>Login</Text>
-      </TouchableOpacity>
+      <Text>Settings</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({});
