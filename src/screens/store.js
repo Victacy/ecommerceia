@@ -160,13 +160,13 @@ export default function Store({ navigation }) {
             width: 50,
             height: 50,
             marginLeft: 10,
-            backgroundColor: "#F9813A",
+            backgroundColor: "#350070",
             borderRadius: 10,
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <MaterialIcons name="tune" size={24} color="black" />
+          <MaterialIcons name="tune" size={24} color="white" />
         </View>
       </View>
       <View>

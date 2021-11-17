@@ -45,7 +45,7 @@ export default function Cart({ navigation }) {
               onPress={() => setMyCart(myCart - 1)}
             />
             <Text style={{ fontWeight: "bold", fontSize: 18, padding: 10 }}>
-              {myCart}
+              {/* {myCart} */} 1
             </Text>
             <Octicons
               name="diff-added"

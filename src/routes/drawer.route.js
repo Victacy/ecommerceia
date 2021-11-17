@@ -7,7 +7,7 @@ import Home from "../screens/home";
 import Login from "../screens/login.js";
 import Details from "../screens/details";
 import Store from "../screens/store";
-import Settings from "../screens/settings";
+// import Settings from "../screens/settings";
 import SignUp from "../screens/signup";
 
 const Drawer = createDrawerNavigator();
@@ -22,7 +22,7 @@ export default function DrawerRoute() {
       <Drawer.Screen name="Product Details" component={Details} />
       <Drawer.Screen name="Signup" component={SignUp} />
       <Drawer.Screen name="Login" component={Login} />
-      <Drawer.Screen name="Settings" component={Settings} />
+      {/* <Drawer.Screen name="Settings" component={Settings} /> */}
     </Drawer.Navigator>
   );
 }
