@@ -10,6 +10,7 @@ import {
   Image,
 } from "react-native";
 import items from "./items";
+import { MainBtn } from "./chk";
 
 export default function Cart({ navigation }) {
   const [myCart, setMyCart] = useState(3);
@@ -59,15 +60,15 @@ export default function Cart({ navigation }) {
       </View>
     );
   };
-  const MainBtn = ({ title, onPress = () => {} }) => {
-    return (
-      <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
-        <View style={styles.btnContainer}>
-          <Text style={styles.title}>{title}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  };
+  // const MainBtn = ({ title, onPress = () => {} }) => {
+  //   return (
+  //     <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+  //       <View style={styles.btnContainer}>
+  //         <Text style={styles.title}>{title}</Text>
+  //       </View>
+  //     </TouchableOpacity>
+  //   );
+  // };
   return (
     <SafeAreaView style={{ backgroundColor: "white", flex: 1 }}>
       <View style={styles.header}>
@@ -138,14 +139,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignContent: "center",
-  },
-  title: { color: "white", fontWeight: "bold", fontSize: 18 },
-  btnContainer: {
-    // backgroundColor: '#F9813A',
-    height: 60,
-    borderRadius: 30,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white",
   },
 });
