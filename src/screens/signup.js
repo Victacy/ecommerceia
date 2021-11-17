@@ -22,11 +22,13 @@ export default function SignUp() {
         style={{
           marginTop: 180,
           padding: 5,
-          fontSize: 18,
+          fontSize: 22,
           fontWeight: "bold",
+          fontStyle: "italic",
+          marginBottom: 20,
         }}
       >
-        Create an account
+        Create an account to begin your journey with us
       </Text>
       <View style={styles.inputView}>
         <TextInput
@@ -120,11 +122,11 @@ export default function SignUp() {
 const styles = StyleSheet.create({
   inputView: {
     // backgroundColor: "#FFC0CB",
-    backgroundColor: "#ededed",
+    // backgroundColor: "#ededed",
     borderColor: "#929292",
     borderWidth: 3,
-    borderRadius: 5,
-    width: "60%",
+    borderRadius: 10,
+    width: "50%",
     height: 45,
     marginBottom: 20,
     alignItems: "center",
@@ -132,6 +134,7 @@ const styles = StyleSheet.create({
 
   TextInput: {
     height: 50,
+    width: "90%",
     // color:'white',
     fontSize: 15,
     flex: 1,
@@ -145,7 +148,8 @@ const styles = StyleSheet.create({
   },
   forgot_button: {
     height: 30,
-    marginBottom: 30,
+    marginBottom: 20,
+    marginTop: 15,
     paddingLeft: 15,
   },
   container: {

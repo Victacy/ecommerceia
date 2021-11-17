@@ -25,47 +25,71 @@ export default function Home({ navigation }) {
           <Text
             style={{
               marginTop: 10,
-              fontSize: 15,
+              fontSize: 14.5,
               textAlign: "center",
               color: "#908e8c",
+              fontWeight: "bold",
             }}
           >
             At Rina's shop you can get nice bags for both males and
-            females,jewelries and other items
+            females,jewelries and other items all at affordable prices.
           </Text>
           <View
             style={{
               flexDirection: "row",
               marginTop: 20,
               justifyContent: "space-evenly",
+              flex: 2,
             }}
           >
             <TouchableOpacity
               onPress={() => navigation.navigate("Login")}
               style={{
                 backgroundColor: "blue",
-                height: 40,
-                width: 85,
-                padding: 20,
-                borderRadius: 5,
+                height: 35,
+                width: 110,
+                padding: 25,
+                borderRadius: 15,
                 elevation: 5,
                 // alignContent: "center",
                 justifyContent: "center",
               }}
             >
-              <Text style={{ color: "white", fontWeight: "bold" }}>Login</Text>
+              <Text
+                style={{
+                  color: "white",
+                  fontSize: 16,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
+              >
+                Login
+              </Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate("Signup")}
               style={{
-                backgroundColor: "blue",
-                height: 40,
-                width: 85,
+                // backgroundColor: "blue",
+                height: 45,
+                width: 110,
                 padding: 20,
-                borderRadius: 5,
+                borderRadius: 15,
+                borderColor: "blue",
+                borderWidth: 2.5,
+                elevation: 5,
+                // alignContent: "center",
+                justifyContent: "center",
               }}
             >
-              <Text style={{ color: "white", fontWeight: "bold" }}>Signup</Text>
+              <Text
+                style={{
+                  fontSize: 16,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}
+              >
+                Signup
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

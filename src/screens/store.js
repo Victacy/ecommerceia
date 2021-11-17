@@ -186,6 +186,8 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     alignItems: "center",
     paddingHorizontal: 20,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
   input: {
     flex: 1,
@@ -219,7 +221,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     borderRadius: 15,
     elevation: 13,
-    backgroundColor: "#bababa",
+    backgroundColor: "#f1f1f1",
     // alignItems: "center",
   },
   addcat: {
