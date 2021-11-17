@@ -1,19 +1,20 @@
 import { NavigationContainer } from "@react-navigation/native";
+// import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-// import AccountRoute from "./src/routes/account.route";
-// import StackRoute from "./src/routes/stack.route";
+// import BottomRoute from "./src/routes/bottom.route";
 import DrawerRoute from "./src/routes/drawer.route";
 
 export default function App() {
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
+
       <SafeAreaProvider>
-        {/* <StackRoute /> */}
+        {/* <BottomRoute /> */}
         <DrawerRoute />
-        {/* <AccountRoute /> */}
       </SafeAreaProvider>
     </NavigationContainer>
   );
