@@ -1,5 +1,5 @@
 import { MaterialIcons, Octicons } from "@expo/vector-icons";
-import React from "react";
+import React, { useState } from "react";
 import {
   FlatList,
   SafeAreaView,
@@ -12,6 +12,8 @@ import {
 import items from "./items";
 
 export default function Cart({ navigation }) {
+  const [myCart, setMyCart] = useState(3);
+
   const ShopCart = ({ item }) => {
     return (
       <View style={styles.shop}>
@@ -40,15 +42,17 @@ export default function Cart({ navigation }) {
               size={24}
               color="black"
               style={{ padding: 10 }}
+              onPress={() => setMyCart(myCart - 1)}
             />
             <Text style={{ fontWeight: "bold", fontSize: 18, padding: 10 }}>
-              3
+              {/* {myCart} */} 1
             </Text>
             <Octicons
               name="diff-added"
               size={24}
               color="black"
               style={{ padding: 10 }}
+              onPress={() => setMyCart(myCart + 1)}
             />
           </View>
         </View>
@@ -56,15 +60,6 @@ export default function Cart({ navigation }) {
     );
   };
   const MainBtn = ({ title, onPress = () => {} }) => {
-    return (
-      <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
-        <View style={styles.btnContainer}>
-          <Text style={styles.title}>{title}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  };
-  const Other = ({ title, onPress = () => {} }) => {
     return (
       <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
         <View style={styles.btnContainer}>
@@ -136,9 +131,9 @@ const styles = StyleSheet.create({
     width: 110,
     height: 50,
     // backgroundColor: "#d35aa2",
-    borderRadius: 10,
-    borderColor: "gray",
-    borderWidth: 3,
+    // borderRadius: 10,
+    // borderColor: "gray",
+    // borderWidth: 1,
     // paddingHorizontal: 5,
     flexDirection: "row",
     justifyContent: "center",
